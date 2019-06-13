@@ -5,7 +5,7 @@ def change_isbn(isbn13)
     .each_char.with_index
     .inject(0) { |sum, (c, i)| sum + c.to_i * (10 - i) }
     .then { |sum| 11 - sum % 11 }
-    .then { |raw_digit| raw_digit == 10 ? 'X' : raw_digit == 11 ? '0' : raw_digit }
+    .then { |raw_digit| { 10 => 'X', 11 => 0 }[raw_digit] || raw_digit }
     .then { |digit| "#{isbn13[3..-2]}#{digit}" }
 end
 
