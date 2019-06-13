@@ -13,6 +13,8 @@ Please refer:
 Requires Ruby 2.6.0 or higher.
 
 ```ruby
+require './lib/isbn_converter'
+
 convert_isbn('9784063842760') #=> "4063842762" 
 convert_isbn('9784774183619') #=> "477418361X"
 convert_isbn('9784797386295') #=> "4797386290"
