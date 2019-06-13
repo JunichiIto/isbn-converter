@@ -9,7 +9,7 @@ def change_isbn(isbn13)
     .then { |digit| "#{body}#{digit}" }
 end
 
-class IsbnChangerTest < Minitest::Test
+class IsbnConverterTest < Minitest::Test
   def test_change_isbn
     assert_equal '4063842762', change_isbn('9784063842760')
   end
